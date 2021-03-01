@@ -8,6 +8,4 @@ public interface AbstractComponent {
     List<AbstractComponent> getComponents();
 
     int countSymbol();
-
-    public String toString();
 }
