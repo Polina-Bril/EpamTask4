@@ -16,21 +16,17 @@ public class CompositeText implements AbstractComponent {
 
     public CompositeText() {
     }
-
     public CompositeText(TypeComponent type) {
         this.type = type;
     }
-
     @Override
     public TypeComponent getType() {
         return type;
     }
-
     @Override
     public List<AbstractComponent> getComponents() {
         return Collections.unmodifiableList(components);
     }
-
     @Override
     public int countSymbol() {
         int counter = 0;
@@ -39,7 +35,6 @@ public class CompositeText implements AbstractComponent {
         }
         return counter;
     }
-
     public void setType(TypeComponent type) {
         this.type = type;
     }
@@ -57,7 +52,6 @@ public class CompositeText implements AbstractComponent {
         logger.log(Level.INFO, "components sorted: " + components.toString());
         return Collections.unmodifiableList(components);
     }
-
     public int countWord() {
         int counter = 0;
         for (AbstractComponent c : this.components) {
@@ -69,7 +63,6 @@ public class CompositeText implements AbstractComponent {
         }
         return counter;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -77,7 +70,6 @@ public class CompositeText implements AbstractComponent {
         CompositeText that = (CompositeText) o;
         return type == that.type && Objects.equals(components, that.components);
     }
-
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -86,7 +78,6 @@ public class CompositeText implements AbstractComponent {
         result = prime * result + ((type == null) ? 0 : type.hashCode());
         return result;
     }
-
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder();

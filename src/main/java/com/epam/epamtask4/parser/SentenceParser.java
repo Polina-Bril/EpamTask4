@@ -15,7 +15,7 @@ public class SentenceParser implements AbstractParser {
                 throw new CompositeException("sentence is null or empty");
             }
             CompositeText sentenceComponent = new CompositeText(TypeComponent.SENTENCE);
-            String[] lexemaData = sentence.split(LEXEMA_SPLIT);
+            String[] lexemaData = sentence.strip().split(LEXEMA_SPLIT);
             for (String lexema : lexemaData) {
                 AbstractComponent lexemaComponent = parser.parse(lexema);
                 sentenceComponent.addComponent(lexemaComponent);

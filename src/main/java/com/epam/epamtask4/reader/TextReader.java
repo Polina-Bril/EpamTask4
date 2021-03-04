@@ -22,8 +22,8 @@ public class TextReader {
         }
         Path path = Paths.get(filePath);
         String text = null;
-        try (Stream<String> lines = Files.lines(path)) {
-            text = lines.collect(Collectors.joining());
+        try (Stream<String> linesFromFile = Files.lines(path)) {
+            text = linesFromFile.collect(Collectors.joining());
         } catch (IOException e) {
             logger.log(Level.ERROR, "file " + filePath + " not found", e);
         }
